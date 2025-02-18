@@ -24,6 +24,7 @@ return {
   		},
   	},
   },
+
   -- lightspeed.nvim
   {
     'ggandor/lightspeed.nvim',
@@ -39,4 +40,16 @@ return {
         require("nvim-surround").setup({})
     end
   },
+
+  -- Startup screen for nvim
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        require('configs.dashboard_vim')
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  }
 }
